@@ -1,164 +1,206 @@
-// Landing / Hero page for SIGAMA Vision
-import { Link, useNavigate } from "react-router-dom";
-import { IoPersonSharp } from "react-icons/io5";
-import { FaLock } from "react-icons/fa";
-import { MdOutlineSettingsInputAntenna } from "react-icons/md";
-import { FaBrain, FaShieldAlt } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+import { 
+  Beef, 
+  MapPin, 
+  Shield, 
+  Bell, 
+  TrendingUp, 
+  Database,
+  Wifi,
+  Camera,
+  ChevronRight
+} from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // TODO: Atualmente aceitamos qualquer email/senha localmente para demonstrar o fluxo.
-    // Substituir por autenticação real (validação no backend, tokens seguros e tratamento de erros).
-    try {
-      localStorage.setItem("sigama_demo_auth", "true");
-    } catch (e) {
-      /* ignore */
+  const features = [
+    {
+      icon: Beef,
+      title: "Gestão de Animais",
+      description: "Cadastro completo com rastreamento de movimentações e histórico detalhado",
+      color: "text-primary"
+    },
+    {
+      icon: Camera,
+      title: "Leitura de Tags",
+      description: "Scanner integrado para códigos e brincos eletrônicos via câmera",
+      color: "text-secondary"
+    },
+    {
+      icon: MapPin,
+      title: "Geolocalização",
+      description: "Rastreamento GPS automático de todas as atividades no campo",
+      color: "text-accent"
+    },
+    {
+      icon: Wifi,
+      title: "Offline-First",
+      description: "Trabalhe sem internet com sincronização automática quando conectar",
+      color: "text-info"
+    },
+    {
+      icon: Shield,
+      title: "Alertas Sanitários",
+      description: "Notificações de vacinação e eventos de saúde animal",
+      color: "text-warning"
+    },
+    {
+      icon: TrendingUp,
+      title: "Analytics Avançado",
+      description: "Dashboards com detecção de padrões suspeitos e anomalias",
+      color: "text-success"
+    },
+    {
+      icon: Bell,
+      title: "Notificações Push",
+      description: "Comunicados da AGED e alertas importantes em tempo real",
+      color: "text-destructive"
+    },
+    {
+      icon: Database,
+      title: "Integração SIGAMA",
+      description: "Sincronização direta com o sistema estadual de gestão",
+      color: "text-primary"
     }
-    navigate("/monitoring");
-  };
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-12 pb-20 px-4 md:pt-20 md:pb-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--primary)/0.1),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(var(--secondary)/0.1),_transparent_50%)]" />
+        
+        <div className="relative max-w-6xl mx-auto text-center animate-fade-in">
+          {/* Logo */}
+          <div className="mb-8 flex justify-center">
+            <div className="bg-card rounded-2xl p-6 shadow-lg border border-border hover-scale">
+              <img 
+                src="/logos/sigama_big_logo.png" 
+                alt="SIGAMA Logo" 
+                className="h-24 md:h-32 w-auto"
+              />
+            </div>
+          </div>
 
-      <div className="md:hidden text-center -mt-6 pb-1">
-        <img
-          src="/logos/sigama_big_logo.png"
-          alt="SIGAMA Logo"
-          className="mx-auto w-40 max-w-[70%]"
-          style={{ transform: "scale(0.8)" }}
-        />
-      </div>
+          {/* Title */}
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            Sistema de Gestão
+            <br />
+            <span className="text-primary">Agropecuária do Maranhão</span>
+          </h1>
 
-      {/* Desktop header (small logo left + CTA) */}
-      <header className="hidden md:flex container mx-auto px-6 py-2 items-center justify-between"> {/* Further adjusted padding to move logo and text up */}
-        <div className="flex items-center gap-3">
-          <img
-            src="/logos/sigama_small_logo.png"
-            alt="SIGAMA Logo"
-            className="w-14 h-14 rounded-md shadow-sm"
-            aria-hidden="true"
-          />
-          <div>
-            <h1 className="text-lg font-bold">SIGAMA Vision</h1>
-            <p className="text-sm text-muted-foreground">Monitoramento inteligente para processos</p>
+          {/* Description */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            Plataforma mobile para fiscais e produtores rurais gerenciarem rebanhos 
+            com tecnologia offline-first e integração completa ao SIGAMA
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover-scale"
+              onClick={() => navigate("/monitoring")}
+            >
+              Acessar Dashboard
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="w-full sm:w-auto text-lg px-8 py-6 hover:bg-muted transition-all"
+              onClick={() => navigate("/analytics")}
+            >
+              Ver Analytics
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-4 mt-16 max-w-2xl mx-auto">
+            <div className="text-center p-4 bg-card rounded-lg border border-border hover-scale">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">247</div>
+              <div className="text-sm text-muted-foreground">Animais</div>
+            </div>
+            <div className="text-center p-4 bg-card rounded-lg border border-border hover-scale">
+              <div className="text-3xl md:text-4xl font-bold text-secondary mb-1">7</div>
+              <div className="text-sm text-muted-foreground">Propriedades</div>
+            </div>
+            <div className="text-center p-4 bg-card rounded-lg border border-border hover-scale">
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-1">98%</div>
+              <div className="text-sm text-muted-foreground">Sincronizado</div>
+            </div>
           </div>
         </div>
-        <nav>
-          {/* CTA Button */}
-        </nav>
-      </header>
+      </section>
 
-  <main className="flex-1 container mx-auto px-4 md:px-6 py-4 md:py-8 md:pb-20"> {/* Further adjusted padding to move content up; reduced md:pb-20 to decrease gap to footer */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div>
-            <h2 className="hidden lg:block text-2xl lg:text-4xl font-extrabold mb-2 lg:mb-4">Monitoramento Inteligente de GTAs</h2>
-            {/* Feature cards (visible on desktop) */}
-            <div className="hidden md:flex md:flex-col md:gap-3.5 mb-3 md:mb-4 md:items-start">
-              <div className="flex items-center gap-3 bg-muted rounded-md p-4 border md:w-80 h-20">
-                <MdOutlineSettingsInputAntenna className="w-[22px] h-[22px] text-[#0D8B56]" aria-hidden />
-                <div>
-                  <div className="font-semibold">Monitoramento em Tempo Real</div>
-                  <div className="text-sm text-muted-foreground">Acompanhe eventos e alertas em tempo real</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-muted rounded-md p-4 border md:w-80 h-20">
-                <FaBrain className="w-[22px] h-[22px] text-[#0D8B56]" aria-hidden />
-                <div>
-                  <div className="font-semibold">IA que Analisa Documentos</div>
-                  <div className="text-sm text-muted-foreground">Extração e verificação automatizada</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-muted rounded-md p-4 border md:w-80 h-20">
-                <FaShieldAlt className="w-[22px] h-[22px] text-[#0D8B56]" aria-hidden />
-                <div>
-                  <div className="font-semibold">Detecção Automática de Fraudes</div>
-                  <div className="text-sm text-muted-foreground">Identificação proativa de anomalias</div>
-                </div>
-              </div>
-            </div>
+      {/* Features Grid */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Funcionalidades Completas
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Tudo que você precisa para gestão agropecuária moderna e eficiente
+            </p>
           </div>
 
-          <aside className="flex flex-col items-center w-full -mt-12 md:mt-0">
-            <div className="w-full bg-muted rounded-lg overflow-hidden shadow p-4 md:p-6">
-              <h3 className="text-lg font-semibold mb-2">Acesse sua conta</h3>
-              <p className="text-[12px] text-gray-400 mb-4">Seus dados são protegidos conforme a LGPD.</p>
-              <form onSubmit={handleLogin} className="flex flex-col gap-3">
-                <label className="text-sm">Email</label>
-                <div className="relative">
-                  <IoPersonSharp className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" aria-hidden />
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Digite seu email institucional"
-                    className="w-full rounded-md border px-3 pl-10 h-12"
-                    aria-label="Email institucional"
-                  />
-                </div>
-
-                <label className="text-sm">Senha</label>
-                <div className="relative">
-                  <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" aria-hidden />
-                  <input
-                    type="password"
-                    name="password"
-                    required
-                    placeholder="Sua senha"
-                    className="w-full rounded-md border px-3 pl-10 h-12"
-                    aria-label="Senha"
-                  />
-                </div>
-
-                <div className="mt-2 grid grid-cols-2 gap-3">
-                  <button type="submit" className="w-full rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow">Entrar</button>
-                  <Link to="/register" className="w-full rounded-md bg-secondary px-3 py-2 text-sm font-medium text-secondary-foreground flex items-center justify-center">Cadastre-se agora</Link>
-                </div>
-              </form>
-
-              {/* gov.br sign-in button inserted as requested */}
-              <div className="mt-3 flex justify-center">
-                <a
-                  className="govbr-sign-in"
-                  href="https://sso.acesso.gov.br/authorize?scope=openid+email+phone+profile+govbr_confiabilidades+govbr_empresa&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fsigama.aged.ma.gov.br%2Fapplication%2Findex%2Flogin&amp;client_id=p-sigama.aged.ma.gov.br&amp;scope=openid+email+phone+profile+govbr_confiabilidades+govbr_empresa&amp;code_challenge_method=S256&amp;code_challenge=ZPr1LnmrKqddRrhgTpiCw0nEWD9j1TYiisRr4kRQJJA"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="p-6 hover:shadow-lg transition-all duration-300 hover-scale hover:border-primary/50 cursor-pointer group animate-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <span>Entrar com</span>
-                  <img className="govbr-img ml-2" src="https://sigama.aged.ma.gov.br/img/govbr-colorido-b.png" alt="gov.br" />
-                </a>
-              </div>
+                  <div className={`${feature.color} mb-4 group-hover:scale-110 transition-transform`}>
+                    <Icon className="h-10 w-10" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border-2 border-primary/20 hover-scale">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Pronto para começar?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Acesse o dashboard e comece a gerenciar seu rebanho com a tecnologia mais avançada
+            </p>
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover-scale"
+              onClick={() => navigate("/monitoring")}
+            >
+              Acessar Plataforma
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Card>
+        </div>
+      </section>
 
-            </div>
-
-            {/* Mini KPI badges */}
-            <div className="mt-3 flex gap-3">
-              <div className="flex items-center gap-2 bg-white/80 border rounded-md px-3 py-2 text-sm">
-                <span>🎯</span>
-                <div>
-                  <div className="font-semibold text-sm">342 GTAs</div>
-                  <div className="text-xs text-muted-foreground">hoje</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 bg-white/80 border rounded-md px-3 py-2 text-sm">
-                <span>⚡</span>
-                <div>
-                  <div className="font-semibold text-sm">8.4 min</div>
-                  <div className="text-xs text-muted-foreground">médio</div>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </section>
-      </main>
-
-      <footer className="py-6 border-t md:fixed md:bottom-0 md:left-0 md:right-0 md:z-20 md:bg-background">
-        <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          Projeto PTG • AGED/FAPEMA 2025 — SIGAMA Vision
+      {/* Footer */}
+      <footer className="py-8 px-4 border-t border-border bg-muted/30">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
+          <p>© 2024 SIGAMA - Sistema de Gestão Agropecuária do Maranhão</p>
+          <p className="mt-2">Governo do Estado do Maranhão - AGED</p>
         </div>
       </footer>
     </div>
