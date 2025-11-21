@@ -8,120 +8,136 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Government-inspired professional palette */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* SIGAMA Vision - Paleta Agro-Tech */
+    --background: 0 0% 98%;
+    --foreground: 155 50% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 155 50% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 155 50% 12%;
 
-    /* Government blue - primary brand color */
-    --primary: 210 85% 42%;
-    --primary-foreground: 0 0% 100%;
+    /* Verde Agro - Cor primária */
+    --primary: 155 50% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 155 45% 35%;
 
-    /* Agricultural green - secondary color */
-    --secondary: 142 55% 45%;
-    --secondary-foreground: 0 0% 100%;
+    /* Azul Tecnológico */
+    --secondary: 207 60% 44%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 15% 45%;
+    /* Amarelo Alerta/Destaque */
+    --accent: 28 88% 66%;
+    --accent-foreground: 155 50% 12%;
 
-    /* Warm accent for alerts and highlights */
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 155 20% 45%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 210 85% 42%;
+    --border: 155 20% 88%;
+    --input: 155 20% 92%;
+    --ring: 155 50% 20%;
 
     --radius: 0.75rem;
-
-    /* Custom tokens for agricultural app */
-    --success: 142 55% 45%;
-    --success-foreground: 0 0% 100%;
     
+    /* Cores customizadas */
+    --success: 142 76% 36%;
     --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --info: 207 60% 44%;
     
-    --info: 210 85% 42%;
-    --info-foreground: 0 0% 100%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 215 25% 15%;
-    --sidebar-primary: 210 85% 42%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 95%;
-    --sidebar-accent-foreground: 215 25% 15%;
-    --sidebar-border: 214 20% 88%;
-    --sidebar-ring: 210 85% 42%;
-
-    /* Gradients for visual appeal */
-    --gradient-primary: linear-gradient(135deg, hsl(210 85% 42%), hsl(210 85% 52%));
-    --gradient-secondary: linear-gradient(135deg, hsl(142 55% 45%), hsl(142 55% 55%));
-    --gradient-hero: linear-gradient(to bottom, hsl(210 20% 98%), hsl(210 30% 96%));
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, hsl(155 50% 20%) 0%, hsl(155 45% 35%) 100%);
+    --gradient-tech: linear-gradient(135deg, hsl(207 60% 44%) 0%, hsl(207 60% 54%) 100%);
     
-    /* Shadows */
-    --shadow-sm: 0 1px 3px hsl(215 25% 15% / 0.08);
-    --shadow-md: 0 4px 12px hsl(215 25% 15% / 0.12);
-    --shadow-lg: 0 12px 24px hsl(215 25% 15% / 0.15);
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 hsl(155 50% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(155 50% 20% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(155 50% 20% / 0.1);
     
-    /* Transitions */
-    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transições */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 30% 8%;
-    --foreground: 210 20% 98%;
+    --background: 155 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 28% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 155 25% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 28% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 155 25% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 85% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 155 45% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 155 40% 45%;
 
-    --secondary: 142 55% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 207 60% 44%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 25% 18%;
-    --muted-foreground: 215 15% 65%;
+    --accent: 28 88% 66%;
+    --accent-foreground: 155 30% 8%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 155 20% 18%;
+    --muted-foreground: 155 10% 65%;
 
-    --destructive: 0 72% 58%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 22%;
-    --input: 215 25% 22%;
-    --ring: 210 85% 52%;
-
-    --success: 142 55% 50%;
-    --success-foreground: 0 0% 100%;
-    
-    --warning: 38 92% 55%;
-    --warning-foreground: 0 0% 100%;
-    
-    --info: 210 85% 52%;
-    --info-foreground: 0 0% 100%;
-
-    --sidebar-background: 215 28% 10%;
-    --sidebar-foreground: 210 20% 98%;
-    --sidebar-primary: 210 85% 52%;
+    --border: 155 20% 20%;
+    --input: 155 20% 20%;
+    --ring: 155 45% 35%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 18%;
-    --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 215 25% 22%;
-    --sidebar-ring: 210 85% 52%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
 
@@ -134,3 +150,53 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* gov.br sign-in button styles (inserted per request) */
+.govbr-sign-in {
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 100em;
+  border: 0;
+  box-sizing: border-box;
+  color: #1351b4;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16.8px;
+  font-weight: 600;
+  height: 40px;
+  justify-content: center;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 0 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+}
+
+.govbr-sign-in:hover {
+  background-color: #e6e6e6;
+}
+
+.govbr-img {
+  border-style: none;
+  box-sizing: border-box;
+  color: #1351b4;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16.8px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-left: 4px !important;
+  max-height: 20px;
+  max-width: 100%;
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
