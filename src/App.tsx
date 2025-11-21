@@ -14,6 +14,7 @@ import Settings from "./pages/Settings";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
+import RuralProducer from "./pages/RuralProducer";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/landing" element={<Index />} />
               <Route path="/dashboard" element={<Monitoring />} />
+              <Route path="/producer" element={<RuralProducer />} />
               <Route path="/monitoring" element={<Monitoring />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/anomalies" element={<Anomalies />} />

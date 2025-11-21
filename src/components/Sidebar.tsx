@@ -1,10 +1,11 @@
-import { BarChart3, Activity, AlertTriangle, Settings } from "lucide-react";
+import { BarChart3, Activity, AlertTriangle, Settings, Beef } from "lucide-react";
 import { LuFileText } from "react-icons/lu";
 import { NavLink } from "./NavLink";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navigation = [
+  { name: "Dashboard Produtor", href: "/producer", icon: Beef },
   { name: "Monitoramento", href: "/monitoring", icon: Activity },
   { name: "Dashboard Analítico", href: "/analytics", icon: BarChart3 },
   { name: "Anomalias", href: "/anomalies", icon: AlertTriangle },
