@@ -29,7 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
           "transition-all duration-300"
         )}
       >
-        <div className="w-full max-w-full p-4 md:p-6 lg:p-8">
+        <div className="w-full max-w-full p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10">
           {children}
         </div>
       </main>
