@@ -19,7 +19,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-4xl">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-foreground mb-2">Configurações</h1>
