@@ -33,7 +33,19 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSelect = (role: string) => {
-    // Redireciona para o formulário de registro com o role como query param
+    // TEMP: Pulamos o formulário de registro e redirecionamos diretamente
+    // para o dashboard do tipo selecionado durante o desenvolvimento.
+    // TODO: Remover esse comportamento e voltar ao fluxo de registro completo
+    // (preencher dados cadastrais / validação) quando a integração estiver pronta.
+    if (role === "produtor") {
+      navigate("/produtor");
+      return;
+    }
+    if (role === "fiscal") {
+      navigate("/fiscal");
+      return;
+    }
+    // Fallback: manter o comportamento original
     navigate(`/register/form?role=${encodeURIComponent(role)}`);
   };
 

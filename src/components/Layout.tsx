@@ -10,7 +10,6 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { pathname } = useLocation();
-  // hideShell disables the app shell (sidebar / mobile nav) for simple pages like the landing and register flows
   const hideShell = pathname === "/landing" || pathname.startsWith("/register");
 
   return (
@@ -26,12 +25,13 @@ const Layout = ({ children }: LayoutProps) => {
       <main
         className={cn(
           "min-h-screen pb-20 md:pb-0",
-          // when sidebar is visible we offset content
-          !hideShell ? "md:ml-64" : "",
+          !hideShell ? "md:pl-64" : "",
           "transition-all duration-300"
         )}
       >
-        <div className="container mx-auto p-4 md:p-6 lg:p-8">{children}</div>
+          <div className="container mx-auto p-4 md:p-6 lg:p-8">
+          {children}
+        </div>
       </main>
 
       {/* Mobile Bottom Navigation */}

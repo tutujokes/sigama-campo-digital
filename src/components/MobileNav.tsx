@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 const navigation = [
   { name: "Produtor", href: "/producer", icon: Beef },
   { name: "Monitor", href: "/monitoring", icon: Activity },
-  { name: "Analytics", href: "/analytics", icon: BarChart3 },
-  { name: "Alertas", href: "/anomalies", icon: AlertTriangle },
-  { name: "Config", href: "/settings", icon: Settings },
+  { name: "Analytics", href: "/gestor/analytics", icon: BarChart3 },
+  { name: "Alertas", href: "/gestor/anomalies", icon: AlertTriangle },
+  { name: "Vaqueiro", href: "/gestor/vaqueiro", icon: LuFileText },
+  { name: "Config", href: "/gestor/settings", icon: Settings },
 ];
 
 const MobileNav = () => {
