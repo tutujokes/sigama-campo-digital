@@ -25,13 +25,15 @@ const Layout = ({ children }: LayoutProps) => {
       <main
         className={cn(
           "min-h-screen pb-20 md:pb-0",
-          !hideShell ? "md:pl-64" : "",
+          // when sidebar is visible offset the main by the sidebar width so
+          // the inner container (below) can center itself with `mx-auto`.
+          !hideShell ? "md:ml-64" : "",
           "transition-all duration-300"
         )}
       >
-          <div className="container mx-auto p-4 md:p-6 lg:p-8">
-          {children}
-        </div>
+    {/* Keep inner content left-aligned within the remaining space so
+      tabs/cards start at the left edge (not centered). */}
+    <div className="w-full p-4 md:p-6 lg:p-8">{children}</div>
       </main>
 
       {/* Mobile Bottom Navigation */}

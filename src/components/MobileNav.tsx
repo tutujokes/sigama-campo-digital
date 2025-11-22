@@ -1,9 +1,9 @@
-import { Activity, BarChart3, AlertTriangle, Settings, Beef } from "lucide-react";
+import { Activity, BarChart3, AlertTriangle, Settings } from "lucide-react";
+import { LuFileText } from "react-icons/lu";
 import { NavLink } from "./NavLink";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Produtor", href: "/producer", icon: Beef },
   { name: "Monitor", href: "/monitoring", icon: Activity },
   { name: "Analytics", href: "/gestor/analytics", icon: BarChart3 },
   { name: "Alertas", href: "/gestor/anomalies", icon: AlertTriangle },

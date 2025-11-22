@@ -8,56 +8,17 @@ import { FaBrain, FaShieldAlt, FaGithub } from "react-icons/fa";
 const Index = () => {
   const navigate = useNavigate();
 
-  const features = [
-    {
-      icon: Beef,
-      title: "Gestão de Animais",
-      description: "Cadastro completo com rastreamento de movimentações e histórico detalhado",
-      color: "text-primary"
-    },
-    {
-      icon: Camera,
-      title: "Leitura de Tags",
-      description: "Scanner integrado para códigos e brincos eletrônicos via câmera",
-      color: "text-secondary"
-    },
-    {
-      icon: MapPin,
-      title: "Geolocalização",
-      description: "Rastreamento GPS automático de todas as atividades no campo",
-      color: "text-accent"
-    },
-    {
-      icon: Wifi,
-      title: "Offline-First",
-      description: "Trabalhe sem internet com sincronização automática quando conectar",
-      color: "text-info"
-    },
-    {
-      icon: Shield,
-      title: "Alertas Sanitários",
-      description: "Notificações de vacinação e eventos de saúde animal",
-      color: "text-warning"
-    },
-    {
-      icon: TrendingUp,
-      title: "Analytics Avançado",
-      description: "Dashboards com detecção de padrões suspeitos e anomalias",
-      color: "text-success"
-    },
-    {
-      icon: Bell,
-      title: "Notificações Push",
-      description: "Comunicados da AGED e alertas importantes em tempo real",
-      color: "text-destructive"
-    },
-    {
-      icon: Database,
-      title: "Integração SIGAMA",
-      description: "Sincronização direta com o sistema estadual de gestão",
-      color: "text-primary"
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // TODO: Atualmente aceitamos qualquer email/senha localmente para demonstrar o fluxo.
+    // Substituir por autenticação real (validação no backend, tokens seguros e tratamento de erros).
+    try {
+      localStorage.setItem("sigama_demo_auth", "true");
+    } catch (e) {
+      /* ignore */
     }
-  ];
+    navigate("/monitoring");
+  };
 
   return (
     <div className="min-h-screen flex flex-col">

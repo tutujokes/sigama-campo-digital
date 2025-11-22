@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Onboarding from "./components/Onboarding";
 import Layout from "./components/Layout";
@@ -20,7 +20,6 @@ import SettingsFiscal from "./pages/DashboardFiscal/Settings";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
-import RuralProducer from "./pages/RuralProducer";
 
 const queryClient = new QueryClient();
 
@@ -34,10 +33,9 @@ const App = () => (
           <Onboarding />
           <Layout>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Navigate to="/landing" replace />} />
+              {/* Landing page */}
               <Route path="/landing" element={<Index />} />
-              <Route path="/dashboard" element={<Monitoring />} />
-              <Route path="/producer" element={<RuralProducer />} />
               <Route path="/monitoring" element={<Monitoring />} />
               <Route path="/register" element={<Register />} />
               <Route path="/register/form" element={<Register />} />
